@@ -23,7 +23,7 @@
         .btn-main { background: #059669; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: 0.2s; display: inline-block; text-align: center; }
         .btn-main:hover { background: #047857; }
         
-        /* HAREKETLİ SLIDER ALANI (YERLEŞİK VERİLİ LOGOLARLA %100 GARANTİLİ) */
+        /* HAREKETLİ SLIDER ALANI */
         .hero-slider { position: relative; width: 100%; height: 440px; overflow: hidden; background: #022c22; }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 0 40px; max-width: 1200px; margin: 0 auto; right: 0; }
         .slide.active { opacity: 1; z-index: 10; }
@@ -89,14 +89,14 @@
         .modal-close:hover { color: #111827; }
         .modal-title { font-size: 20px; font-weight: bold; color: #065f46; margin-bottom: 20px; text-align: center; }
 
-        /* TELEFONLAR İÇİN MOBİL UYUMLULUK KURALLARI (GÖRSEL GİZLEME KALDIRILDI) */
+        /* TELEFONLAR İÇİN MOBİL UYUMLULUK KURALLARI */
         @media (max-w: 768px) {
-            .hero-slider { height: 500px; } /* Mobilde yazılar ve resimler alt alta sığsın diye alan genişletildi */
+            .hero-slider { height: 500px; }
             .slide { grid-template-columns: 1fr; padding: 25px 15px; text-align: center; }
             .slide-content { padding-right: 0; margin-bottom: 20px; }
             .slide-content h2 { font-size: 24px; }
             .slide-content p { font-size: 14px; }
-            .slide-graphic { display: flex !important; visibility: visible !important; } /* Resimlerin telefonda zorla görünmesini sağlar */
+            .slide-graphic { display: flex !important; visibility: visible !important; }
             .logo-circle { width: 150px; height: 150px; border-width: 4px; }
             .price-section { grid-template-columns: 1fr; margin-top: -30px; gap: 20px; }
             .feature-grid { grid-template-columns: 1fr; }
@@ -121,7 +121,7 @@
     </header>
 
     <section class="hero-slider">
-        <!-- 1. Slayt -->
+        <!-- 1. Slayt: Büyükbaş Yazısı + İnek Logosu -->
         <div class="slide active">
             <div class="slide-content">
                 <h2>Büyükbaş Kurban Hissesi Bağışı</h2>
@@ -134,7 +134,7 @@
             </div>
         </div>
         
-        <!-- 2. Slayt -->
+        <!-- 2. Slayt: Küçükbaş Yazısı + Koyun Logosu (BAŞLIK HATASI DÜZELTİLDİ) -->
         <div class="slide">
             <div class="slide-content">
                 <h2>Küçükbaş Kurban Vekaleti</h2>
