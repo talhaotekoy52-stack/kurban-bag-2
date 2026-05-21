@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Şevkat Işığı Derneği - Kurban Bağışı</title>
+    <!-- Harici yükleme engellerine takılmayan saf, modern yerleşik CSS tasarımı -->
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background: #f4f6f4; color: #1f2937; line-height: 1.5; }
@@ -88,12 +89,15 @@
         .modal-close:hover { color: #111827; }
         .modal-title { font-size: 20px; font-weight: bold; color: #065f46; margin-bottom: 20px; text-align: center; }
 
+        /* TELEFONLAR İÇİN MOBİL UYUMLULUK KURALLARI (GÖRSEL GİZLEME KALDIRILDI) */
         @media (max-w: 768px) {
-            .slide { grid-template-columns: 1fr; padding: 20px; text-align: center; }
+            .hero-slider { height: 500px; } /* Mobilde yazılar ve resimler alt alta sığsın diye alan genişletildi */
+            .slide { grid-template-columns: 1fr; padding: 25px 15px; text-align: center; }
+            .slide-content { padding-right: 0; margin-bottom: 20px; }
             .slide-content h2 { font-size: 24px; }
             .slide-content p { font-size: 14px; }
-            .slide-graphic { margin-top: 20px; }
-            .logo-circle { width: 160px; height: 160px; border-width: 4px; }
+            .slide-graphic { display: flex !important; visibility: visible !important; } /* Resimlerin telefonda zorla görünmesini sağlar */
+            .logo-circle { width: 150px; height: 150px; border-width: 4px; }
             .price-section { grid-template-columns: 1fr; margin-top: -30px; gap: 20px; }
             .feature-grid { grid-template-columns: 1fr; }
         }
@@ -117,7 +121,7 @@
     </header>
 
     <section class="hero-slider">
-        <!-- 1. Slayt: Büyükbaş Yazısı + Koda Yerleşik Dijital İnek Logosu -->
+        <!-- 1. Slayt -->
         <div class="slide active">
             <div class="slide-content">
                 <h2>Büyükbaş Kurban Hissesi Bağışı</h2>
@@ -125,13 +129,12 @@
             </div>
             <div class="slide-graphic">
                 <div class="logo-circle">
-                    <!-- Resim verisi doğrudan kodun içine gömüldü, kırılma şansı sıfır -->
                     <img src="https://ibb.co" alt="Büyükbaş Kurban">
                 </div>
             </div>
         </div>
         
-        <!-- 2. Slayt: Küçükbaş Yazısı + Koda Yerleşik Dijital Koyun Logosu -->
+        <!-- 2. Slayt -->
         <div class="slide">
             <div class="slide-content">
                 <h2>Küçükbaş Kurban Vekaleti</h2>
@@ -139,7 +142,6 @@
             </div>
             <div class="slide-graphic">
                 <div class="logo-circle">
-                    <!-- Resim verisi doğrudan kodun içine gömüldü, kırılma şansı sıfır -->
                     <img src="https://ibb.co" alt="Küçükbaş Kurban">
                 </div>
             </div>
@@ -202,7 +204,7 @@
                 <div class="faq-question" onclick="toggleFaq(this)">Kesim videoları ne zaman gönderilir? <span class="faq-toggle">+</span></div>
                 <div class="faq-answer">Kurbanınız İslami usullere uygun olarak kesildiği anda, isminizin zikredildiği kesim videosu kayda alınır ve bayram günlerinde WhatsApp üzerinden tarafınıza ulaştırılır.</div>
             </div>
-        </div>
+        </section>
 
     </div>
 
