@@ -24,7 +24,7 @@
         .btn-main:hover { background: #047857; }
         
         /* HAREKETLİ GÖRSELLİ VE DEĞİŞEN YAZILI SLIDER ALANI */
-        .hero-slider { position: relative; width: 100%; height: 420px; overflow: hidden; background: #022c22; }
+        .hero-slider { position: relative; width: 100%; height: 450px; overflow: hidden; background: #022c22; }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; }
         .slide.active { opacity: 1; }
         .slide-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)); }
@@ -87,7 +87,7 @@
 
         /* MOBİL UYUM */
         @media (max-w: 768px) {
-            .hero-slider { height: 320px; }
+            .hero-slider { height: 340px; }
             .slide-content h2 { font-size: 26px; }
             .slide-content p { font-size: 15px; }
             .price-section { grid-template-columns: 1fr; margin-top: -30px; gap: 20px; }
@@ -110,21 +110,22 @@
                 <div class="logo-title">ŞEVKAT IŞIĞI</div>
                 <div class="logo-sub">Güvenilir ve Şeffaf Bağış Platformu</div>
             </div>
-            <!-- ÜSTTEKİ BUTONUN METNİ 'BAĞIŞ YAP' OLARAK GÜNCELLENDİ -->
             <button onclick="scrollToBank()" class="btn-main">Bağış Yap</button>
         </div>
     </header>
 
-    <!-- HAREKETLİ SLIDER ALANI -->
+    <!-- KESİN OLARAK DEĞİŞEN HAREKETLİ RESİM VE YAZI ALANI (SLIDER) -->
     <section class="hero-slider">
-        <div class="slide active" style="background-image: url('https://unsplash.com');">
+        <!-- 1. Slayt: Büyükbaş Yazısı ve Büyükbaş Resmi -->
+        <div class="slide active" style="background-image: url('https://pixabay.com');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2>Büyükbaş Kurban Hissesi Bağışı</h2>
                 <p>Hisselerinizi muhtaç kardeşlerimizin sofralarına ulaştırıyor, bereketi paylaşıyoruz.</p>
             </div>
         </div>
-        <div class="slide" style="background-image: url('https://unsplash.com');">
+        <!-- 2. Slayt: Küçükbaş Yazısı ve Küçükbaş Resmi -->
+        <div class="slide" style="background-image: url('https://pixabay.com');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2>Küçükbaş Kurban Vekaleti</h2>
@@ -245,6 +246,7 @@
             if(event.target.id === 'donationModal') { closeModal(); }
         }
 
+        // SLIDER MOTORU: Yazıyla resmi tam zamanlı senkronize değiştirir
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         function nextSlide() {
@@ -252,7 +254,7 @@
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
-        setInterval(nextSlide, 4000);
+        setInterval(nextSlide, 4000); // 4 saniyede bir resim ve yazı aynı anda döner
 
         function scrollToBank() {
             document.getElementById('genel-banka').scrollIntoView({ behavior: 'smooth' });
