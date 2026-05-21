@@ -23,22 +23,14 @@
         .btn-main { background: #059669; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: 0.2s; display: inline-block; text-align: center; }
         .btn-main:hover { background: #047857; }
         
-        /* HAREKETLİ SLIDER ALANI (YERLEŞİK VERİLİ LOGOLARLA %100 GARANTİLİ) */
+        /* HAREKETLİ SLIDER ALANI (GARANTİLİ GERÇEK RESİMLİ) */
         .hero-slider { position: relative; width: 100%; height: 440px; overflow: hidden; background: #022c22; }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 0 40px; max-width: 1200px; margin: 0 auto; right: 0; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; background-repeat: no-repeat; text-align: center; }
         .slide.active { opacity: 1; z-index: 10; }
-        .slide-content { color: white; padding-right: 20px; }
-        .slide-content h2 { font-size: 34px; font-weight: bold; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        .slide-content p { font-size: 17px; color: #a7f3d0; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
-        .slide-graphic { display: flex; justify-content: center; align-items: center; }
-        
-        /* Daire tasarımı */
-        .logo-circle { background: #ffffff; width: 220px; height: 220px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 15px 30px rgba(0,0,0,0.4); border: 6px solid #059669; padding: 10px; overflow: hidden; }
-        .logo-circle img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
-
-        /* KÜÇÜKBAŞ VE BÜYÜKBAŞ SAF RESİM BLOKLARI (ASLA KIRILMAZ) */
-        .cow-avatar { background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://w3.org"><circle cx="50" cy="50" r="45" fill="%23047857" opacity="0.2"/><path d="M30,42 Q50,22 70,42 Q75,62 50,77 Q25,62 30,42 Z" fill="%23111827"/><circle cx="42" cy="48" r="4" fill="%23ffffff"/><circle cx="58" cy="48" r="4" fill="%23ffffff"/><circle cx="42" cy="48" r="2" fill="%23000000"/><circle cx="55" cy="48" r="2" fill="%23000000"/><path d="M28,34 Q18,20 34,26" stroke="%23ffffff" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M72,34 Q82,20 66,26" stroke="%23ffffff" stroke-width="4" fill="none" stroke-linecap="round"/></svg>'); width:100%; height:100%; background-size:contain; background-repeat:no-repeat; background-position:center; }
-        .sheep-avatar { background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://w3.org"><circle cx="50" cy="50" r="45" fill="%230e7490" opacity="0.2"/><circle cx="50" cy="48" r="22" fill="%23111827"/><circle cx="50" cy="48" r="18" fill="%23ffffff"/><circle cx="42" cy="45" r="3" fill="%23000000"/><circle cx="58" cy="45" r="3" fill="%23000000"/><path d="M28,35 Q16,42 28,48" stroke="%23111827" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M72,35 Q84,42 72,48" stroke="%23111827" stroke-width="4" fill="none" stroke-linecap="round"/></svg>'); width:100%; height:100%; background-size:contain; background-repeat:no-repeat; background-position:center; }
+        .slide-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.55)); z-index: 1; }
+        .slide-content { position: relative; z-index: 10; color: white; max-w: 800px; padding: 0 20px; }
+        .slide-content h2 { font-size: 36px; font-weight: bold; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.6); }
+        .slide-content p { font-size: 18px; color: #a7f3d0; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
 
         /* FİYAT KARTLARI BÖLÜMÜ */
         .price-section { max-w: 1200px; margin: -40px auto 40px; padding: 0 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; position: relative; z-index: 30; }
@@ -59,7 +51,7 @@
         .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
         .feature-item { background: #f9fafb; padding: 15px; border-radius: 8px; border-left: 5px solid #059669; font-size: 15px; font-weight: 600; color: #374151; }
 
-        /* GENEL DERNEK HESABI */
+        /* AŞAĞIYA ALINAN GENEL DERNEK HESABI */
         .bank-section { background: #065f46; color: #ffffff; padding: 35px; border-radius: 12px; box-shadow: 0 10px 25px rgba(6,95,70,0.15); margin-bottom: 50px; }
         .bank-section h3 { font-size: 22px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 12px; font-weight: 700; }
         .bank-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center; }
@@ -84,7 +76,7 @@
         /* FOOTER */
         footer { background: #111827; color: #9ca3af; padding: 40px 20px; text-align: center; font-size: 14px; }
         
-        /* POP-UP PENCERE */
+        /* POP-UP PENCERE (MODAL) */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal-box { background: #ffffff; width: 92%; max-width: 460px; border-radius: 12px; padding: 30px; box-shadow: 0 20px 30px rgba(0,0,0,0.2); position: relative; transform: translateY(-20px); transition: transform 0.2s ease; border-top: 6px solid #059669; }
@@ -93,15 +85,12 @@
         .modal-close:hover { color: #111827; }
         .modal-title { font-size: 20px; font-weight: bold; color: #065f46; margin-bottom: 20px; text-align: center; }
 
-        /* TELEFONLAR İÇİN MOBİL UYUMLULUK KURALLARI */
+        /* MOBİL UYUM */
         @media (max-w: 768px) {
-            .hero-slider { height: 520px; } /* Mobilde alan genişletildi */
-            .slide { grid-template-columns: 1fr; padding: 25px 15px; text-align: center; }
-            .slide-content { padding-right: 0; margin-bottom: 20px; }
-            .slide-content h2 { font-size: 24px; }
+            .hero-slider { height: 340px; }
+            .slide-content h2 { font-size: 26px; }
             .slide-content p { font-size: 14px; }
-            .slide-graphic { display: flex !important; visibility: visible !important; } /* Zorla görünür kılma komutu */
-            .logo-circle { width: 150px; height: 150px; border-width: 4px; margin: 0 auto; }
+            .slide-graphic { display: none; } /* Mobilde sorun çıkaran alanı gizler */
             .price-section { grid-template-columns: 1fr; margin-top: -30px; gap: 20px; }
             .feature-grid { grid-template-columns: 1fr; }
         }
@@ -109,11 +98,13 @@
 </head>
 <body>
 
+    <!-- BAYRAM GERİ SAYIM ŞERİDİ -->
     <div class="countdown-banner">
         🕌 Kurban Bayramı'na Kalan Süre: 
         <div id="timer" class="countdown-timer">Hesaplanıyor...</div>
     </div>
 
+    <!-- HEADER -->
     <header>
         <div class="nav-container">
             <div>
@@ -124,34 +115,28 @@
         </div>
     </header>
 
+    <!-- HAREKETLİ SLIDER ALANI -->
     <section class="hero-slider">
         <!-- 1. Slayt: Büyükbaş -->
-        <div class="slide active">
+        <div class="slide active" style="background-image: url('https://fineartamerica.com');">
+            <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2>Büyükbaş Kurban Hissesi Bağışı</h2>
                 <p>Hisselerinizi muhtaç kardeşlerimizin sofralarına ulaştırıyor, bereketi paylaşıyoruz.</p>
             </div>
-            <div class="slide-graphic">
-                <div class="logo-circle">
-                    <div class="cow-avatar"></div>
-                </div>
-            </div>
         </div>
         
-        <!-- 2. Slayt: Küçükbaş -->
-        <div class="slide">
+        <!-- 2. Slayt: Küçükbaş (BAŞLIK "KÜÇÜKBAŞ KURBAN VEKALETİ" OLARAK DÜZELTİLDİ) -->
+        <div class="slide" style="background-image: url('https://fineartamerica.com');">
+            <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2>Küçükbaş Kurban Vekaleti</h2>
                 <p>İslami usullere tam uygun kesim videolarını anında telefonunuza gönderiyoruz.</p>
             </div>
-            <div class="slide-graphic">
-                <div class="logo-circle">
-                    <div class="sheep-avatar"></div>
-                </div>
-            </div>
         </div>
     </section>
 
+    <!-- FİYAT KARTLARI -->
     <div class="price-section">
         <div class="price-card">
             <h3>Büyükbaş Kurban Hissesi</h3>
@@ -165,10 +150,15 @@
         </div>
     </div>
 
+    <!-- DİKEY GENİŞLEYEN ANA KONTEYNER -->
     <div class="main-container">
+        
+        <!-- SÜREÇ DETAYLARI -->
         <div class="details-area">
             <h3>Bağışlarınızla Umut Olun</h3>
             <p>Şevkat Işığı Derneği olarak, hayırseverlerimizin emanet ettiği kurban vekaletlerini büyük bir hassasiyetle yönetiyoruz. Kesimlerimiz tamamen İslami kurallara uygun olarak, veteriner denetiminde gerçekleştirilmektedir.</p>
+            <p>Vekaletiniz alındığı andan itibaren, kesim anı ve dağıtım aşamaları dahil olmak üzere her adımda şeffaflık ilkesiyle hareket ediyor, emanetlerinizi gerçek ihtiyaç sahiplerine ulaştırıyoruz.</p>
+            
             <div class="feature-grid">
                 <div class="feature-item">✓ İslami Usullere Uygun Kesim</div>
                 <div class="feature-item">✓ Resmi Vekâlet Alma Süreci</div>
@@ -181,13 +171,14 @@
             </div>
         </div>
 
+        <!-- GENEL DERNEK HESABI -->
         <div id="genel-banka" class="bank-section">
             <h3>Genel Dernek Hesap Bilgilerimiz</h3>
             <div class="bank-grid">
                 <div>
                     <span class="iban-label">Ziraat Bankası Resmi IBAN</span>
                     <div id="ibanText" class="iban-box">TR12 3456 7890 1234 5678 9012 34</div>
-                    <button id="copyBtn" onclick="copyIban('ibanText', 'copyBtn')" class="btn-main" style="width:100%; font-weight:bold;">IBAN'ı Kopyala</button>
+                    <button id="copyBtn" onclick="copyIban('ibanText', 'copyBtn')" class="btn-main" style="width:100%; font-weight:bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">IBAN'ı Kopyala</button>
                 </div>
                 <div class="bank-info-rows">
                     <div class="bank-row"><span>Hesap Sahibi:</span> <span style="font-weight:600;">Şevkat Işığı Derneği</span></div>
@@ -198,27 +189,39 @@
             </div>
         </div>
 
+        <!-- SIKÇA SORULAN SORULAR -->
         <section class="faq-section">
             <h3>Sıkça Sorulan Sorular</h3>
+            
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">Kurban vekaleti nasıl alınır? <span class="faq-toggle">+</span></div>
                 <div class="faq-answer">Bağışınızı yaparken açıklama kısmına adınızı, soyadınızı ve "Kurban Vekaleti" yazmanız durumunda vekaletiniz resmi olarak derneğimize devredilmiş sayılır.</div>
             </div>
+
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">Kesim videoları ne zaman gönderilir? <span class="faq-toggle">+</span></div>
                 <div class="faq-answer">Kurbanınız İslami usullere uygun olarak kesildiği anda, isminizin zikredildiği kesim videosu kayda alınır ve bayram günlerinde WhatsApp üzerinden tarafınıza ulaştırılır.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Kurban etleri kimlere dağıtılıyor? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Kesilen kurbanlıkların etleri, önceden titizlikle tespit edilmiş gerçek ihtiyaç sahibi ailelere, yetimhanelere ve medrese öğrencilerine özenle pay edilerek dağıtılmaktadır.</div>
             </div>
         </section>
 
     </div>
 
+    <!-- POP-UP PENCERE ARAYÜZÜ -->
     <div id="donationModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
         <div class="modal-box">
             <button class="modal-close" onclick="closeModal()">×</button>
             <div id="modalKurbanTitle" class="modal-title">Kurban Seçimi</div>
+            
             <span class="iban-label" style="color:#065f46;">Bu Seçeneğe Özel Hesap Numarası</span>
             <div id="modalIbanText" class="iban-box" style="color:white; background:#065f46;">TR00 0000...</div>
+            
             <button id="modalCopyBtn" onclick="copyIban('modalIbanText', 'modalCopyBtn')" class="btn-copy">IBAN'ı Kopyala</button>
+            
             <div class="bank-row" style="color:#374151; border-bottom:1px solid #f3f4f6;"><span style="color:#065f46;">Hesap Sahibi:</span> <span>Şevkat Işığı Derneği</span></div>
             <div class="bank-row" style="color:#374151; border-bottom:1px solid #f3f4f6; margin-top:6px;"><span style="color:#065f46;">Banka:</span> <span>Ziraat Bankası</span></div>
             <div class="bank-row" style="color:#374151; border-bottom:1px solid #f3f4f6; margin-top:6px;"><span style="color:#065f46;">Açıklama:</span> <span id="modalKurbanDescription" style="background:#d1fae5; color:#065f46; padding:2px 6px; border-radius:4px; font-weight:600;">Kurban Bağışı</span></div>
@@ -229,41 +232,50 @@
         <p><b>&copy; 2026 Şevkat Işığı Derneği. Tüm hakları saklıdır.</b></p>
     </footer>
 
+    <!-- JAVASCRIPT MOTORU -->
     <script>
-        // Kilitlenmeleri tamamen çözen hafif, kararlı JS yapısı
         function openModal(title, iban) {
             document.getElementById('modalKurbanTitle').innerText = title;
             document.getElementById('modalIbanText').innerText = iban;
             document.getElementById('modalKurbanDescription').innerText = title + " Bağışı";
             document.getElementById('donationModal').classList.add('active');
         }
-        function closeModal() { document.getElementById('donationModal').classList.remove('active'); }
-        function closeModalOnOverlay(event) { if(event.target.id === 'donationModal') { closeModal(); } }
+        function closeModal() {
+            document.getElementById('donationModal').classList.remove('active');
+        }
+        function closeModalOnOverlay(event) {
+            if(event.target.id === 'donationModal') { closeModal(); }
+        }
 
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         function nextSlide() {
-            if(slides.length === 0) return;
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
         setInterval(nextSlide, 4000);
 
-        function scrollToBank() { document.getElementById('genel-banka').scrollIntoView({ behavior: 'smooth' }); }
+        function scrollToBank() {
+            document.getElementById('genel-banka').scrollIntoView({ behavior: 'smooth' });
+        }
 
         function toggleFaq(element) {
             const item = element.parentElement;
             const isAlreadyActive = item.classList.contains('active');
             document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
-            if (!isAlreadyActive) { item.classList.add('active'); }
+            if (!isAlreadyActive) {
+                item.classList.add('active');
+            }
         }
 
         function copyIban(textId, btnId) {
             const ibanText = document.getElementById(textId).innerText;
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(ibanText).then(function() { showSuccess(btnId); }).catch(function() { fallbackCopy(ibanText, btnId); });
-            } else { fallbackCopy(ibanText, btnId); }
+            } else {
+                fallbackCopy(ibanText, btnId);
+            }
         }
         function fallbackCopy(text, btnId) {
             const textArea = document.createElement("textarea");
@@ -279,7 +291,10 @@
             const oldText = btn.innerText;
             btn.innerText = "✓ Kopyalandı!";
             btn.style.background = "#16a34a";
-            setTimeout(function() { btn.innerText = oldText; btn.style.background = ""; }, 2000);
+            setTimeout(function() {
+                btn.innerText = oldText;
+                btn.style.background = "";
+            }, 2000);
         }
 
         function startCountdown() {
