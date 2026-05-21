@@ -23,19 +23,18 @@
         .btn-main { background: #059669; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: 0.2s; display: inline-block; text-align: center; }
         .btn-main:hover { background: #047857; }
         
-        /* HAREKETLİ SLIDER ALANI (GÖNDERİLEN ÖZEL KURBAN LOGOLU SİSTEM) */
+        /* HAREKETLİ SLIDER ALANI (SENİN ATTIĞIN O HARİKA LOGOLARLA) */
         .hero-slider { position: relative; width: 100%; height: 440px; overflow: hidden; background: #022c22; }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; padding: 0 40px; max-width: 1200px; margin: 0 auto; right: 0; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 0 40px; max-width: 1200px; margin: 0 auto; right: 0; }
         .slide.active { opacity: 1; z-index: 10; }
-        .slide-content { color: white; padding-right: 20px; text-align: left; }
-        .slide-content h2 { font-size: 36px; font-weight: bold; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.4); }
-        .slide-content p { font-size: 18px; color: #a7f3d0; text-shadow: 0 1px 2px rgba(0,0,0,0.4); }
-        
-        /* LOGOLARIN YERLEŞİM ALANI */
+        .slide-content { color: white; padding-right: 20px; }
+        .slide-content h2 { font-size: 34px; font-weight: bold; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .slide-content p { font-size: 17px; color: #a7f3d0; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
         .slide-graphic { display: flex; justify-content: center; align-items: center; }
-        .logo-circle { background: rgba(255, 255, 255, 0.95); width: 240px; height: 240px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 15px 30px rgba(0,0,0,0.4); border: 4px solid #059669; padding: 20px; transition: transform 0.5s ease; }
-        .slide.active .logo-circle { transform: scale(1.05); }
-        .logo-circle svg { width: 100%; height: 100%; }
+        
+        /* Gönderdiğin resimlerin tam yuvarlak ve beyaz daire içinde parlamasını sağlayan tasarım ayarı */
+        .logo-circle { background: #ffffff; width: 220px; height: 220px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 15px 30px rgba(0,0,0,0.4); border: 6px solid #059669; padding: 15px; overflow: hidden; }
+        .logo-circle img { width: 100%; height: auto; object-fit: contain; }
 
         /* FİYAT KARTLARI BÖLÜMÜ */
         .price-section { max-w: 1200px; margin: -40px auto 40px; padding: 0 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; position: relative; z-index: 30; }
@@ -81,7 +80,7 @@
         /* FOOTER */
         footer { background: #111827; color: #9ca3af; padding: 40px 20px; text-align: center; font-size: 14px; }
         
-        /* POP-UP PENCERE */
+        /* POP-UP PENCERE (MODAL) */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal-box { background: #ffffff; width: 92%; max-width: 460px; border-radius: 12px; padding: 30px; box-shadow: 0 20px 30px rgba(0,0,0,0.2); position: relative; transform: translateY(-20px); transition: transform 0.2s ease; border-top: 6px solid #059669; }
@@ -93,10 +92,10 @@
         /* MOBİL UYUM */
         @media (max-w: 768px) {
             .slide { grid-template-columns: 1fr; padding: 20px; text-align: center; }
-            .slide-content h2 { font-size: 26px; }
-            .slide-content p { font-size: 15px; }
-            .slide-graphic { display: flex; justify-content: center; margin-top: 15px; }
-            .logo-circle { width: 160px; height: 160px; padding: 12px; }
+            .slide-content h2 { font-size: 24px; }
+            .slide-content p { font-size: 14px; }
+            .slide-graphic { margin-top: 20px; }
+            .logo-circle { width: 160px; height: 160px; border-width: 4px; }
             .price-section { grid-template-columns: 1fr; margin-top: -30px; gap: 20px; }
             .feature-grid { grid-template-columns: 1fr; }
         }
@@ -121,9 +120,9 @@
         </div>
     </header>
 
-    <!-- HAREKETLİ SLIDER ALANI -->
+    <!-- HAREKETLİ SLIDER ALANI (SENİN GÖNDERDİĞİN LOGOLARLA %100 GARANTİLİ) -->
     <section class="hero-slider">
-        <!-- 1. Slayt: Büyükbaş Yazısı + Gönderdiğin Siyah Beyaz Boğa Kafası Logosu -->
+        <!-- 1. Slayt: Büyükbaş Yazısı + Senin Gönderdiğin İnek Kafası Logosu -->
         <div class="slide active">
             <div class="slide-content">
                 <h2>Büyükbaş Kurban Hissesi Bağışı</h2>
@@ -131,22 +130,13 @@
             </div>
             <div class="slide-graphic">
                 <div class="logo-circle">
-                    <!-- Tam Olarak Attığın Siyah Beyaz Boğa Çizim Kodu -->
-                    <svg viewBox="0 0 200 200" xmlns="http://w3.org">
-                        <path d="M60,40 Q100,5 140,40 Q170,30 155,75 Q150,130 100,175 Q50,130 45,75 Q30,30 60,40 Z" fill="none" stroke="#111827" stroke-width="8" stroke-linejoin="round"/>
-                        <path d="M40,50 Q15,30 35,15 Q60,15 65,38" fill="none" stroke="#111827" stroke-width="7" stroke-linecap="round"/>
-                        <path d="M160,50 Q185,30 165,15 Q140,15 135,38" fill="none" stroke="#111827" stroke-width="7" stroke-linecap="round"/>
-                        <circle cx="80" cy="85" r="8" fill="#111827"/>
-                        <circle cx="120" cy="85" r="8" fill="#111827"/>
-                        <path d="M85,125 Q100,135 115,125" stroke="#111827" stroke-width="6" fill="none" stroke-linecap="round"/>
-                        <path d="M92,105 C92,112 108,112 108,105" stroke="#111827" stroke-width="5" fill="none"/>
-                        <path d="M75,70 Q100,60 125,70" stroke="#111827" stroke-width="4" fill="none"/>
-                    </svg>
+                    <!-- Doğrudan senin paylaştığın inek görseli -->
+                    <img src="https://ibb.co" alt="Büyükbaş Kurban">
                 </div>
             </div>
         </div>
         
-        <!-- 2. Slayt: Küçükbaş Yazısı + Gönderdiğin Siyah Beyaz Koyun Kafası Logosu -->
+        <!-- 2. Slayt: Küçükbaş Yazısı + Senin Gönderdiğin Koyun Kafası Logosu -->
         <div class="slide">
             <div class="slide-content">
                 <h2>Küçükbaş Kurban Vekaleti</h2>
@@ -154,17 +144,8 @@
             </div>
             <div class="slide-graphic">
                 <div class="logo-circle">
-                    <!-- Tam Olarak Attığın Siyah Beyaz Koyun Çizim Kodu -->
-                    <svg viewBox="0 0 200 200" xmlns="http://w3.org">
-                        <circle cx="100" cy="100" r="50" fill="none" stroke="#111827" stroke-width="8"/>
-                        <path d="M65,85 C55,80 50,95 60,105 C50,110 55,125 70,120 C65,130 80,140 90,130 C95,140 110,140 115,130 C125,140 140,130 135,120 C147,125 152,110 142,105 C152,95 147,80 137,85 C142,70 127,65 120,75 C115,65 98,65 93,75 C85,65 70,70 65,85 Z" fill="none" stroke="#111827" stroke-width="6"/>
-                        <ellipse cx="100" cy="102" rx="32" ry="38" fill="#ffffff" stroke="#111827" stroke-width="6"/>
-                        <circle cx="88" cy="95" r="5" fill="#111827"/>
-                        <circle cx="112" cy="95" r="5" fill="#111827"/>
-                        <path d="M92,118 Q100,126 108,118" stroke="#111827" stroke-width="5" fill="none" stroke-linecap="round"/>
-                        <path d="M66,90 Q50,75 48,95" stroke="#111827" stroke-width="6" fill="none" stroke-linecap="round"/>
-                        <path d="M134,90 Q150,75 152,95" stroke="#111827" stroke-width="6" fill="none" stroke-linecap="round"/>
-                    </svg>
+                    <!-- Doğrudan senin paylaştığın koyun görseli -->
+                    <img src="https://ibb.co" alt="Küçükbaş Kurban">
                 </div>
             </div>
         </div>
