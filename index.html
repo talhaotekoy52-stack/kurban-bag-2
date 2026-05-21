@@ -36,6 +36,10 @@
         .logo-circle { background: #ffffff; width: 220px; height: 220px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 15px 30px rgba(0,0,0,0.4); border: 6px solid #059669; padding: 10px; overflow: hidden; }
         .logo-circle img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
 
+        /* KÜÇÜKBAŞ VE BÜYÜKBAŞ SAF RESİM BLOKLARI (ASLA KIRILMAZ) */
+        .cow-avatar { background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://w3.org"><circle cx="50" cy="50" r="45" fill="%23047857" opacity="0.2"/><path d="M30,42 Q50,22 70,42 Q75,62 50,77 Q25,62 30,42 Z" fill="%23111827"/><circle cx="42" cy="48" r="4" fill="%23ffffff"/><circle cx="58" cy="48" r="4" fill="%23ffffff"/><circle cx="42" cy="48" r="2" fill="%23000000"/><circle cx="55" cy="48" r="2" fill="%23000000"/><path d="M28,34 Q18,20 34,26" stroke="%23ffffff" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M72,34 Q82,20 66,26" stroke="%23ffffff" stroke-width="4" fill="none" stroke-linecap="round"/></svg>'); width:100%; height:100%; background-size:contain; background-repeat:no-repeat; background-position:center; }
+        .sheep-avatar { background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://w3.org"><circle cx="50" cy="50" r="45" fill="%230e7490" opacity="0.2"/><circle cx="50" cy="48" r="22" fill="%23111827"/><circle cx="50" cy="48" r="18" fill="%23ffffff"/><circle cx="42" cy="45" r="3" fill="%23000000"/><circle cx="58" cy="45" r="3" fill="%23000000"/><path d="M28,35 Q16,42 28,48" stroke="%23111827" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M72,35 Q84,42 72,48" stroke="%23111827" stroke-width="4" fill="none" stroke-linecap="round"/></svg>'); width:100%; height:100%; background-size:contain; background-repeat:no-repeat; background-position:center; }
+
         /* FİYAT KARTLARI BÖLÜMÜ */
         .price-section { max-w: 1200px; margin: -40px auto 40px; padding: 0 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; position: relative; z-index: 30; }
         .price-card { background: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 30px; text-align: center; border-top: 6px solid #059669; transition: 0.3s; }
@@ -89,7 +93,7 @@
         .modal-close:hover { color: #111827; }
         .modal-title { font-size: 20px; font-weight: bold; color: #065f46; margin-bottom: 20px; text-align: center; }
 
-        /* TELEFONLAR İÇİN MOBİL UYUMLULUK KURALLARI (GÖRSEL KİLİDİ TAMAMEN KALDIRILDI) */
+        /* TELEFONLAR İÇİN MOBİL UYUMLULUK KURALLARI */
         @media (max-w: 768px) {
             .hero-slider { height: 520px; } /* Mobilde alan genişletildi */
             .slide { grid-template-columns: 1fr; padding: 25px 15px; text-align: center; }
@@ -129,12 +133,12 @@
             </div>
             <div class="slide-graphic">
                 <div class="logo-circle">
-                    <img src="https://ibb.co" alt="Büyükbaş Kurban">
+                    <div class="cow-avatar"></div>
                 </div>
             </div>
         </div>
         
-        <!-- 2. Slayt: Küçükbaş (BAŞLIK VE MOBİL GÖRÜNÜM EŞİTLENDİ) -->
+        <!-- 2. Slayt: Küçükbaş -->
         <div class="slide">
             <div class="slide-content">
                 <h2>Küçükbaş Kurban Vekaleti</h2>
@@ -142,7 +146,7 @@
             </div>
             <div class="slide-graphic">
                 <div class="logo-circle">
-                    <img src="https://ibb.co" alt="Küçükbaş Kurban">
+                    <div class="sheep-avatar"></div>
                 </div>
             </div>
         </div>
@@ -226,6 +230,7 @@
     </footer>
 
     <script>
+        // Kilitlenmeleri tamamen çözen hafif, kararlı JS yapısı
         function openModal(title, iban) {
             document.getElementById('modalKurbanTitle').innerText = title;
             document.getElementById('modalIbanText').innerText = iban;
@@ -238,6 +243,7 @@
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         function nextSlide() {
+            if(slides.length === 0) return;
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
