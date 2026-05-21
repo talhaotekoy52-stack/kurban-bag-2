@@ -89,7 +89,7 @@
         .modal-close:hover { color: #111827; }
         .modal-title { font-size: 20px; font-weight: bold; color: #065f46; margin-bottom: 20px; text-align: center; }
 
-        /* MOBİL UYUM (SADECE BİLGİSAYARDA GÖRÜNMESİ İÇİN DÜZENLENDİ) */
+        /* MOBİL UYUM */
         @media (max-w: 768px) {
             .hero-slider { height: 340px; }
             .slide { grid-template-columns: 1fr; padding: 20px; text-align: center; }
@@ -119,7 +119,7 @@
     </header>
 
     <section class="hero-slider">
-        <!-- 1. Slayt -->
+        <!-- 1. Slayt: Büyükbaş -->
         <div class="slide active">
             <div class="slide-content">
                 <h2>Büyükbaş Kurban Hissesi Bağışı</h2>
@@ -127,12 +127,13 @@
             </div>
             <div class="slide-graphic">
                 <div class="logo-circle">
-                    <img src="buyukbas.jpg" alt="Büyükbaş Kurban">
+                    <!-- ?v=2 kodu tarayıcının inatçı hafızasını kırmak için zorunludur -->
+                    <img src="buyukbas.jpg?v=2" alt="Büyükbaş Kurban">
                 </div>
             </div>
         </div>
         
-        <!-- 2. Slayt -->
+        <!-- 2. Slayt: Küçükbaş (BAŞLIK VE HAFIZA SIFIRLAMA KODU TAMAMEN EŞİTLENDİ) -->
         <div class="slide">
             <div class="slide-content">
                 <h2>Küçükbaş Kurban Vekaleti</h2>
@@ -140,7 +141,8 @@
             </div>
             <div class="slide-graphic">
                 <div class="logo-circle">
-                    <img src="kucukbas.jpg" alt="Küçükbaş Kurban">
+                    <!-- ?v=2 kodu tarayıcının inatçı hafızasını kırmak için zorunludur -->
+                    <img src="kucukbas.jpg?v=2" alt="Küçükbaş Kurban">
                 </div>
             </div>
         </div>
