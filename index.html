@@ -23,7 +23,7 @@
         .btn-main { background: #059669; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: 0.2s; display: inline-block; text-align: center; }
         .btn-main:hover { background: #047857; }
         
-        /* HAREKETLİ GÖRSEL ALANI (SLIDER / HERO) */
+        /* HAREKETLİ GÖRSELLİ VE DEĞİŞEN YAZILI SLIDER ALANI */
         .hero-slider { position: relative; width: 100%; height: 420px; overflow: hidden; background: #022c22; }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; }
         .slide.active { opacity: 1; }
@@ -45,7 +45,7 @@
         /* SÜREÇ DETAYLARI ALANI */
         .details-area { background: #ffffff; padding: 35px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); margin-bottom: 40px; }
         .details-area h3 { color: #065f46; margin-bottom: 15px; font-size: 24px; border-bottom: 2px solid #f3f4f6; padding-bottom: 12px; font-weight: 700; }
-        .details-area p { color: #4b5563; font-size: 16px; margin-bottom: 20px; leading-relaxed: 1.6; }
+        .details-area p { color: #4b5563; font-size: 16px; margin-bottom: 20px; }
         
         /* SÜREÇ MADDELERİ */
         .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
@@ -63,7 +63,7 @@
         .bank-row { display: flex; justify-content: space-between; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
         .bank-row span:first-child { color: #a7f3d0; }
         
-        /* SIKÇA SORULAN SORULAR (ALT ALTA VE GENİŞ) */
+        /* SIKÇA SORULAN SORULAR */
         .faq-section { margin-bottom: 60px; }
         .faq-section h3 { color: #065f46; margin-bottom: 25px; font-size: 24px; font-weight: 700; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
         .faq-item { background: #ffffff; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); overflow: hidden; border: 1px solid #e5e7eb; }
@@ -110,13 +110,13 @@
                 <div class="logo-title">ŞEVKAT IŞIĞI</div>
                 <div class="logo-sub">Güvenilir ve Şeffaf Bağış Platformu</div>
             </div>
-            <button onclick="scrollToBank()" class="btn-main">Genel Hesap Ekranı</button>
+            <!-- ÜSTTEKİ BUTONUN METNİ 'BAĞIŞ YAP' OLARAK GÜNCELLENDİ -->
+            <button onclick="scrollToBank()" class="btn-main">Bağış Yap</button>
         </div>
     </header>
 
-    <!-- HAREKETLİ GÖRSELLİ VE DEĞİŞEN YAZILI SLIDER ALANI -->
+    <!-- HAREKETLİ SLIDER ALANI -->
     <section class="hero-slider">
-        <!-- 1. Slayt (Büyükbaş Teması) -->
         <div class="slide active" style="background-image: url('https://unsplash.com');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
@@ -124,7 +124,6 @@
                 <p>Hisselerinizi muhtaç kardeşlerimizin sofralarına ulaştırıyor, bereketi paylaşıyoruz.</p>
             </div>
         </div>
-        <!-- 2. Slayt (Küçükbaş Teması) -->
         <div class="slide" style="background-image: url('https://unsplash.com');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
@@ -139,12 +138,12 @@
         <div class="price-card">
             <h3>Büyükbaş Kurban Hissesi</h3>
             <div class="price">3.750 ₺</div>
-            <button onclick="openModal('Büyükbaş Kurban Hissesi', 'TR11 1111 2222 3333 4444 5555 11')" class="btn-main" style="width:85%;">Bağış Yap</button>
+            <button onclick="openModal('Büyükbaş Kurban Hissesi', 'TR111111222233334444555511')" class="btn-main" style="width:85%;">Bağış Yap</button>
         </div>
         <div class="price-card">
             <h3>Küçükbaş Kurban</h3>
             <div class="price">4.250 ₺</div>
-            <button onclick="openModal('Küçükbaş Kurban', 'TR22 2222 3333 4444 5555 6666 22')" class="btn-main" style="width:85%; background:#047857;" >Bağış Yap</button>
+            <button onclick="openModal('Küçükbaş Kurban', 'TR222222333344445555666622')" class="btn-main" style="width:85%; background:#047857;">Bağış Yap</button>
         </div>
     </div>
 
@@ -187,7 +186,7 @@
             </div>
         </div>
 
-        <!-- SIKÇA SORULAN SORULAR (ALT ALTA VE GENİŞ GENİŞ UZAYAN) -->
+        <!-- SIKÇA SORULAN SORULAR -->
         <section class="faq-section">
             <h3>Sıkça Sorulan Sorular</h3>
             
@@ -231,9 +230,8 @@
         <p><b>&copy; 2026 Şevkat Işığı Derneği. Tüm hakları saklıdır.</b></p>
     </footer>
 
-    <!-- KİLİTLENMEYİ ÖNLEYEN EN COK GÜVENLİ JAVASCRIPT MOTORU -->
+    <!-- JAVASCRIPT MOTORU -->
     <script>
-        // 1. ASLA DONMAYAN POP-UP PENCERE MOTORU
         function openModal(title, iban) {
             document.getElementById('modalKurbanTitle').innerText = title;
             document.getElementById('modalIbanText').innerText = iban;
@@ -247,7 +245,6 @@
             if(event.target.id === 'donationModal') { closeModal(); }
         }
 
-        // 2. OTOMATİK DÖNEN HAREKETLİ RESİM (SLIDER) SİSTEMİ
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         function nextSlide() {
@@ -255,28 +252,21 @@
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
-        setInterval(nextSlide, 4000); // Her 4 saniyede bir resmi ve yazıyı otomatik değiştirir
+        setInterval(nextSlide, 4000);
 
-        // 3. GENEL HESABA YUMUŞAKÇA KAYDIRMA MOTORU
         function scrollToBank() {
             document.getElementById('genel-banka').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // 4. KİLİTLENMEYİ ÖNLEYEN AKORDEON MENÜ MOTORU
         function toggleFaq(element) {
             const item = element.parentElement;
             const isAlreadyActive = item.classList.contains('active');
-            
-            // Hepsini kapat
             document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
-            
-            // Eğer tıklanan açık değilse onu aç
             if (!isAlreadyActive) {
                 item.classList.add('active');
             }
         }
 
-        // 5. ASLA ENGELLENMEYEN GÜVENLİ KOPYALAMA MOTORU
         function copyIban(textId, btnId) {
             const ibanText = document.getElementById(textId).innerText;
             if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -305,7 +295,6 @@
             }, 2000);
         }
 
-        // 6. CANLI GERİ SAYIM SAYACI MOTORU
         function startCountdown() {
             const targetDate = new Date("May 27, 2026 00:00:00").getTime();
             setInterval(function() {
