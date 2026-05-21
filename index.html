@@ -23,14 +23,15 @@
         .btn-main { background: #059669; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: 0.2s; display: inline-block; text-align: center; }
         .btn-main:hover { background: #047857; }
         
-        /* HAREKETLİ GÖRSELLİ VE DEĞİŞEN YAZILI SLIDER ALANI */
-        .hero-slider { position: relative; width: 100%; height: 450px; overflow: hidden; background: #022c22; }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; }
-        .slide.active { opacity: 1; }
-        .slide-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)); }
-        .slide-content { position: relative; z-index: 10; text-align: center; max-w: 800px; padding: 0 20px; color: white; }
-        .slide-content h2 { font-size: 36px; font-weight: bold; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        .slide-content p { font-size: 18px; color: #a7f3d0; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+        /* HAREKETLİ SLIDER ALANI (ASLA ENGELLENMEYEN DIJITAL ÇIZIMLI) */
+        .hero-slider { position: relative; width: 100%; height: 440px; overflow: hidden; background: #022c22; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 0 40px; max-width: 1200px; margin: 0 auto; right: 0; }
+        .slide.active { opacity: 1; z-index: 10; }
+        .slide-content { color: white; padding-right: 20px; }
+        .slide-content h2 { font-size: 34px; font-weight: bold; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .slide-content p { font-size: 17px; color: #a7f3d0; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
+        .slide-graphic { display: flex; justify-content: center; align-items: center; }
+        .slide-graphic svg { width: 80%; max-width: 320px; height: auto; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3)); }
 
         /* FİYAT KARTLARI BÖLÜMÜ */
         .price-section { max-w: 1200px; margin: -40px auto 40px; padding: 0 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; position: relative; z-index: 30; }
@@ -39,7 +40,7 @@
         .price-card h3 { font-size: 20px; color: #374151; margin-bottom: 12px; font-weight: 700; }
         .price-card .price { font-size: 32px; font-weight: 800; color: #065f46; margin-bottom: 20px; }
         
-        /* UZAYAN VE GENİŞLEYEN SAYFA DÜZENİ */
+        /* DÜZEN KONTEYNERİ */
         .main-container { max-w: 1200px; margin: 0 auto 50px; padding: 0 15px; }
         
         /* SÜREÇ DETAYLARI ALANI */
@@ -49,7 +50,7 @@
         
         /* SÜREÇ MADDELERİ */
         .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
-        .feature-item { background: #f9fafb; padding: 15px; border-radius: 8px; border-left: 5px solid #059669; font-size: 15px; font-weight: 600; color: #374151; box-shadow: 0 1px 2px rgba(0,0,0,0.01); }
+        .feature-item { background: #f9fafb; padding: 15px; border-radius: 8px; border-left: 5px solid #059669; font-size: 15px; font-weight: 600; color: #374151; }
 
         /* AŞAĞIYA ALINAN GENEL DERNEK HESABI */
         .bank-section { background: #065f46; color: #ffffff; padding: 35px; border-radius: 12px; box-shadow: 0 10px 25px rgba(6,95,70,0.15); margin-bottom: 50px; }
@@ -58,7 +59,7 @@
         @media (max-w: 768px) { .bank-grid { grid-template-columns: 1fr; gap: 20px; } }
         
         .iban-label { font-size: 12px; color: #a7f3d0; font-weight: bold; text-transform: uppercase; margin-bottom: 6px; display: block; letter-spacing: 0.5px; }
-        .iban-box { font-family: monospace; font-size: 16px; font-weight: bold; background: #044e37; padding: 15px; border-radius: 6px; word-break: break-all; margin-bottom: 15px; text-align: center; letter-spacing: 0.5px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
+        .iban-box { font-family: monospace; font-size: 16px; font-weight: bold; background: #044e37; padding: 15px; border-radius: 6px; word-break: break-all; margin-bottom: 15px; text-align: center; letter-spacing: 0.5px; }
         .bank-info-rows { display: flex; flex-direction: column; gap: 10px; }
         .bank-row { display: flex; justify-content: space-between; font-size: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
         .bank-row span:first-child { color: #a7f3d0; }
@@ -87,9 +88,10 @@
 
         /* MOBİL UYUM */
         @media (max-w: 768px) {
-            .hero-slider { height: 340px; }
-            .slide-content h2 { font-size: 26px; }
-            .slide-content p { font-size: 15px; }
+            .slide { grid-template-columns: 1fr; padding: 20px; text-align: center; }
+            .slide-content h2 { font-size: 24px; }
+            .slide-content p { font-size: 14px; }
+            .slide-graphic { display: none; } /* Mobilde çizimleri gizleyerek alanı temiz tutar */
             .price-section { grid-template-columns: 1fr; margin-top: -30px; gap: 20px; }
             .feature-grid { grid-template-columns: 1fr; }
         }
@@ -114,22 +116,47 @@
         </div>
     </header>
 
-    <!-- KESİN OLARAK DEĞİŞEN HAREKETLİ RESİM VE YAZI ALANI (SLIDER) -->
+    <!-- HAREKETLİ SLIDER ALANI -->
     <section class="hero-slider">
-        <!-- 1. Slayt: Büyükbaş Yazısı ve Büyükbaş Resmi -->
-        <div class="slide active" style="background-image: url('https://pixabay.com');">
-            <div class="slide-overlay"></div>
+        <!-- 1. Slayt: Büyükbaş Yazısı + Kodla Çizilen Büyükbaş SVG Görseli -->
+        <div class="slide active">
             <div class="slide-content">
                 <h2>Büyükbaş Kurban Hissesi Bağışı</h2>
                 <p>Hisselerinizi muhtaç kardeşlerimizin sofralarına ulaştırıyor, bereketi paylaşıyoruz.</p>
             </div>
+            <div class="slide-graphic">
+                <!-- Dijital İnek/Boğa Çizimi -->
+                <svg viewBox="0 0 100 100" xmlns="http://w3.org">
+                    <circle cx="50" cy="50" r="45" fill="#047857" opacity="0.3"/>
+                    <path d="M30,40 Q50,20 70,40 Q75,60 50,75 Q25,60 30,40 Z" fill="#a7f3d0"/>
+                    <circle cx="42" cy="45" r="4" fill="#065f46"/>
+                    <circle cx="58" cy="45" r="4" fill="#065f46"/>
+                    <path d="M45,60 Q50,65 55,60" stroke="#065f46" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M28,32 Q20,20 35,26" stroke="#fef08a" stroke-width="4" fill="none" stroke-linecap="round"/>
+                    <path d="M72,32 Q80,20 65,26" stroke="#fef08a" stroke-width="4" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
         </div>
-        <!-- 2. Slayt: Küçükbaş Yazısı ve Küçükbaş Resmi -->
-        <div class="slide" style="background-image: url('https://pixabay.com');">
-            <div class="slide-overlay"></div>
+        
+        <!-- 2. Slayt: Küçükbaş Yazısı + Kodla Çizilen Küçükbaş SVG Görseli -->
+        <div class="slide">
             <div class="slide-content">
                 <h2>Küçükbaş Kurban Vekaleti</h2>
                 <p>İslami usullere tam uygun kesim videolarını anında telefonunuza gönderiyoruz.</p>
+            </div>
+            <div class="slide-graphic">
+                <!-- Dijital Koç/Koyun Çizimi -->
+                <svg viewBox="0 0 100 100" xmlns="http://w3.org">
+                    <circle cx="50" cy="50" r="45" fill="#0e7490" opacity="0.3"/>
+                    <circle cx="50" cy="48" r="22" fill="#ffffff"/>
+                    <circle cx="38" cy="45" r="8" fill="#f3f4f6"/>
+                    <circle cx="62" cy="45" r="8" fill="#f3f4f6"/>
+                    <circle cx="50" cy="55" r="10" fill="#f3f4f6"/>
+                    <circle cx="45" cy="45" r="3" fill="#111827"/>
+                    <circle cx="55" cy="45" r="3" fill="#111827"/>
+                    <path d="M28,35 Q20,45 32,48" stroke="#d1d5db" stroke-width="4" fill="none" stroke-linecap="round"/>
+                    <path d="M72,35 Q80,45 68,48" stroke="#d1d5db" stroke-width="4" fill="none" stroke-linecap="round"/>
+                </svg>
             </div>
         </div>
     </section>
@@ -169,7 +196,7 @@
             </div>
         </div>
 
-        <!-- AŞAĞIYA ALINAN GENEL DERNEK HESABI -->
+        <!-- GENEL DERNEK HESABI -->
         <div id="genel-banka" class="bank-section">
             <h3>Genel Dernek Hesap Bilgilerimiz</h3>
             <div class="bank-grid">
@@ -246,7 +273,7 @@
             if(event.target.id === 'donationModal') { closeModal(); }
         }
 
-        // SLIDER MOTORU: Yazıyla resmi tam zamanlı senkronize değiştirir
+        // SLIDER MOTORU
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         function nextSlide() {
@@ -254,7 +281,7 @@
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
-        setInterval(nextSlide, 4000); // 4 saniyede bir resim ve yazı aynı anda döner
+        setInterval(nextSlide, 4000);
 
         function scrollToBank() {
             document.getElementById('genel-banka').scrollIntoView({ behavior: 'smooth' });
