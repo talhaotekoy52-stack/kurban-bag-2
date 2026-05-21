@@ -23,7 +23,7 @@
         .btn-main { background: #059669; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: 0.2s; display: inline-block; text-align: center; }
         .btn-main:hover { background: #047857; }
         
-        /* HAREKETLİ SLIDER ALANI (SENİN ATTIĞIN O HARİKA LOGOLARLA) */
+        /* HAREKETLİ SLIDER ALANI (KENDİ RESİMLERİMİZLE %100 GARANTİLİ) */
         .hero-slider { position: relative; width: 100%; height: 440px; overflow: hidden; background: #022c22; }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 0 40px; max-width: 1200px; margin: 0 auto; right: 0; }
         .slide.active { opacity: 1; z-index: 10; }
@@ -32,9 +32,9 @@
         .slide-content p { font-size: 17px; color: #a7f3d0; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
         .slide-graphic { display: flex; justify-content: center; align-items: center; }
         
-        /* Gönderdiğin resimlerin tam yuvarlak ve beyaz daire içinde parlamasını sağlayan tasarım ayarı */
-        .logo-circle { background: #ffffff; width: 220px; height: 220px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 15px 30px rgba(0,0,0,0.4); border: 6px solid #059669; padding: 15px; overflow: hidden; }
-        .logo-circle img { width: 100%; height: auto; object-fit: contain; }
+        /* Daire tasarımı */
+        .logo-circle { background: #ffffff; width: 220px; height: 220px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 15px 30px rgba(0,0,0,0.4); border: 6px solid #059669; padding: 10px; overflow: hidden; }
+        .logo-circle img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
 
         /* FİYAT KARTLARI BÖLÜMÜ */
         .price-section { max-w: 1200px; margin: -40px auto 40px; padding: 0 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; position: relative; z-index: 30; }
@@ -120,9 +120,9 @@
         </div>
     </header>
 
-    <!-- HAREKETLİ SLIDER ALANI (SENİN GÖNDERDİĞİN LOGOLARLA %100 GARANTİLİ) -->
+    <!-- HAREKETLİ SLIDER ALANI -->
     <section class="hero-slider">
-        <!-- 1. Slayt: Büyükbaş Yazısı + Senin Gönderdiğin İnek Kafası Logosu -->
+        <!-- 1. Slayt: Büyükbaş Yazısı + Senin Yüklediğin İnek Resmi -->
         <div class="slide active">
             <div class="slide-content">
                 <h2>Büyükbaş Kurban Hissesi Bağışı</h2>
@@ -130,13 +130,12 @@
             </div>
             <div class="slide-graphic">
                 <div class="logo-circle">
-                    <!-- Doğrudan senin paylaştığın inek görseli -->
-                    <img src="https://ibb.co" alt="Büyükbaş Kurban">
+                    <img src="buyukbas.jpg" alt="Büyükbaş Kurban">
                 </div>
             </div>
         </div>
         
-        <!-- 2. Slayt: Küçükbaş Yazısı + Senin Gönderdiğin Koyun Kafası Logosu -->
+        <!-- 2. Slayt: Küçükbaş Yazısı + Senin Yüklediğin Koyun Resmi -->
         <div class="slide">
             <div class="slide-content">
                 <h2>Küçükbaş Kurban Vekaleti</h2>
@@ -144,8 +143,7 @@
             </div>
             <div class="slide-graphic">
                 <div class="logo-circle">
-                    <!-- Doğrudan senin paylaştığın koyun görseli -->
-                    <img src="https://ibb.co" alt="Küçükbaş Kurban">
+                    <img src="kucukbas.jpg" alt="Küçükbaş Kurban">
                 </div>
             </div>
         </div>
