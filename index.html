@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Şevkat Işığı Derneği - Kurban Bağışı</title>
+    <!-- İnternet engeline takılmayan saf, modern yerleşik CSS tasarımı -->
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f3f4f6; color: #1f2937; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+        header { background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 40; }
+        .nav-container { max-w: 1200px; margin: 0 auto; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-title { font-weight: bold; color: #065f46; font-size: 18px; }
+        .logo-sub { font-size: 11px; color: #6b7280; margin-top: -2px; }
+        .btn-main { background: #059669; color: #ffffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 13px; border: none; cursor: pointer; transition: 0.2s; white-space: nowrap; }
+        .btn-main:hover { background: #047857; }
+        
+        /* GERİ SAYIM SAYACI */
+        .countdown-banner { background: #b91c1c; color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 13px; }
+        .countdown-timer { display: inline-block; margin-left: 5px; color: #fef08a; }
+
+        .hero { background: linear-gradient(135deg, #064e3b 0%, #047857 100%); color: #ffffff; padding: 50px 20px; text-align: left; }
+        .hero-container { max-w: 1200px; margin: 0 auto; }
+        .hero h2 { font-size: 28px; font-weight: bold; margin-bottom: 12px; line-height: 1.2; }
+        .hero p { font-size: 15px; color: #d1fae5; margin-bottom: 20px; }
+        
+        /* FİYAT KARTLARI */
+        .price-section { max-w: 1200px; margin: -25px auto 30px; padding: 0 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; z-index: 10; }
+        .price-card { background: #ffffff; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.06); padding: 25px; text-align: center; border-top: 5px solid #059669; transition: 0.3s; }
+        .price-card:hover { transform: translateY(-3px); }
+        .price-card h3 { font-size: 18px; color: #374151; margin-bottom: 8px; }
+        .price-card .price { font-size: 26px; font-weight: 800; color: #065f46; margin-bottom: 15px; }
+        
+        .main-content { max-w: 1200px; margin: 30px auto; padding: 0 15px; display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+        .details-area { background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .details-area h3 { color: #065f46; margin-bottom: 15px; font-size: 20px; border-bottom: 2px solid #f3f4f6; padding-bottom: 8px; }
+        .details-area p { color: #4b5563; font-size: 14px; margin-bottom: 15px; }
+        
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px; }
+        .feature-item { background: #f9fafb; padding: 12px; border-radius: 8px; border-left: 4px solid #059669; font-size: 13px; font-weight: 600; color: #374151; }
+
+        .bank-card { background: #065f46; color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); height: fit-content; }
+        .bank-card h3 { font-size: 18px; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
+        .iban-label { font-size: 11px; color: #a7f3d0; font-weight: bold; text-transform: uppercase; margin-bottom: 5px; display: block; }
+        .iban-box { font-family: monospace; font-size: 14px; font-weight: bold; background: #044e37; padding: 10px; border-radius: 4px; word-break: break-all; margin-bottom: 15px; text-align: center; }
+        
+        .btn-copy { width: 100%; background: #059669; color: white; border: none; padding: 12px; border-radius: 6px; font-size: 14px; font-weight: bold; cursor: pointer; transition: 0.2s; margin-bottom: 15px; }
+        .btn-copy:hover { background: #047857; }
+        .btn-copied { background: #16a34a !important; }
+        .bank-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; }
+        .bank-row span:first-child { color: #a7f3d0; }
+        
+        .faq-section { max-w: 1200px; margin: 30px auto; padding: 0 15px; }
+        .faq-section h3 { color: #065f46; margin-bottom: 15px; font-size: 20px; }
+        .faq-item { background: #ffffff; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); overflow: hidden; }
+        .faq-question { padding: 15px; font-weight: 600; color: #374151; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { padding: 0 15px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #4b5563; font-size: 13px; }
+        .faq-item.active .faq-answer { padding: 15px; border-top: 1px solid #f3f4f6; }
+
+        footer { background: #111827; color: #9ca3af; padding: 30px 15px; text-align: center; font-size: 13px; margin-top: 40px; }
+
+        /* AÇILIR PENCERE (MODAL POP-UP) SİSTEMİ CSS AYARLARI */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-box { background: #ffffff; width: 90%; max-width: 450px; border-radius: 12px; padding: 25px; box-shadow: 0 20px 25px rgba(0,0,0,0.15); position: relative; transform: translateY(-20px); transition: transform 0.3s ease; border-top: 6px solid #059669; }
+        .modal-overlay.active .modal-box { transform: translateY(0); }
+        .modal-close { position: absolute; top: 12px; right: 15px; font-size: 22px; color: #9ca3af; cursor: pointer; border: none; background: none; font-weight: bold; }
+        .modal-close:hover { color: #111827; }
+        .modal-title { font-size: 18px; font-weight: bold; color: #065f46; margin-bottom: 15px; text-align: center; padding-right: 20px; }
+
+        @media (max-w: 768px) {
+            .price-section { grid-template-columns: 1fr; }
+            .main-content { grid-template-columns: 1fr; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CANLI GERI SAYIM -->
+    <div class="countdown-banner">
+        🕌 Kurban Bayramı'na Kalan Süre: <div id="timer" class="countdown-timer">Hesaplanıyor...</div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <div>
+                <div class="logo-title">ŞEVKAT IŞIĞI</div>
+                <div class="logo-sub">Güvenilir ve Şeffaf Bağış Platformu</div>
+            </div>
+            <a href="#bagis" class="btn-main">Hesap Numaraları</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container">
+            <h2>Vacip Kurbanınızı Hemen Bağışlayın</h2>
+            <p>Kurban vekaletlerinizi İslami usullere uygun olarak kesiyor, videolarını telefonunuza gönderiyoruz.</p>
+        </div>
+    </section>
+
+    <!-- FİYAT KARTLARI -->
+    <div class="price-section">
+        <div class="price-card">
+            <h3>Büyükbaş Kurban Hissesi</h3>
+            <div class="price">3.750 ₺</div>
+            <button onclick="openModal('Büyükbaş Kurban Hissesi', 'TR11 1111 2222 3333 4444 5555 11')" class="btn-main" style="width:80%;">Hisse Bağışla</button>
+        </div>
+        <div class="price-card">
+            <h3>Küçükbaş Kurban</h3>
+            <div class="price">4.250 ₺</div>
+            <button onclick="openModal('Küçükbaş Kurban', 'TR22 2222 3333 4444 5555 6666 22')" class="btn-main" style="width:80%; background:#047857;">Küçükbaş Bağışla</button>
+        </div>
+    </div>
+
+    <!-- DETAYLAR -->
+    <main id="bagis" class="main-content">
+        <div class="details-area">
+            <h3>Bağışlarınızla Umut Olun</h3>
+            <p>Şevkat Işığı Derneği olarak emanetlerinizi büyük bir hassasiyetle yönetiyoruz. Kesimlerimiz tamamen İslami kurallara uygun olarak, veteriner denetiminde gerçekleştirilmektedir.</p>
+            <div class="feature-grid">
+                <div class="feature-item">✓ İslami Usullere Uygun Kesim</div>
+                <div class="feature-item">✓ Resmi Vekâlet Alma Süreci</div>
+                <div class="feature-item">✓ Uzman Veteriner Kontrolü</div>
+                <div class="feature-item">✓ SMS ve WhatsApp Bilgilendirmesi</div>
+                <div class="feature-item">✓ İsminize Özel Kesim Videosu</div>
+                <div class="feature-item">✓ Detaylı Dağıtım Videosu</div>
+                <div class="feature-item">✓ e-Devlet Kayıtlı Resmi Dernek</div>
+                <div class="feature-item">✓ Şeffaf ve Güvenilir Altyapı</div>
+            </div>
+        </div>
+
+        <div class="bank-card">
+            <h3>Genel Dernek Hesabı</h3>
+            <span class="iban-label">Ziraat Bankası IBAN</span>
+            <div id="ibanText" class="iban-box">TR12 3456 7890 1234 5678 9012 34</div>
+            <button id="copyBtn" onclick="copyIban('ibanText', 'copyBtn')" class="btn-copy">IBAN'ı Kopyala</button>
+            <div class="bank-row"><span>Hesap Sahibi:</span> <span>Şevkat Işığı Derneği</span></div>
+            <div class="bank-row"><span>Banka:</span> <span>Ziraat Bankası</span></div>
+            <div class="bank-row"><span>Açıklama:</span> <span style="background:#044e37; padding:2px 6px; border-radius:4px;">Kurban Bağışı</span></div>
+        </div>
+    </main>
+
+    <!-- SIKÇA SORULAN SORULAR -->
+    <section class="faq-section">
+        <h3>Sıkça Sorulan Sorular</h3>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Kurban vekaleti nasıl alınır? <span>+</span></div>
+            <div class="faq-answer">Bağışınızı yaparken açıklama kısmına adınızı, soyadınızı ve "Kurban Vekaleti" yazmanız durumunda vekaletiniz resmi olarak derneğimize devredilmiş sayılır.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Kesim videoları ne zaman gönderilir? <span>+</span></div>
+            <div class="faq-answer">Kurbanınız kesildiği anda isminizin zikredildiği kesim videosu kayda alınır ve bayram günlerinde WhatsApp üzerinden tarafınıza ulaştırılır.</div>
+        </div>
+    </section>
+
+    <!-- POP-UP PENCERE -->
+    <div id="donationModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div id="modalKurbanTitle" class="modal-title">Kurban Seçimi</div>
+            
+            <span class="iban-label" style="color:#065f46;">Bu Seçeneğe Özel IBAN</span>
+            <div id="modalIbanText" class="iban-box" style="color:white;">TR00 0000...</div>
+            
+            <button id="modalCopyBtn" onclick="copyIban('modalIbanText', 'modalCopyBtn')" class="btn-copy">IBAN'ı Kopyala</button>
+            
+            <div class="bank-row" style="color:#374151; border-bottom:1px solid #f3f4f6;"><span style="color:#065f46;">Hesap Sahibi:</span> <span>Şevkat Işığı Derneği</span></div>
+            <div class="bank-row" style="color:#374151; border-bottom:1px solid #f3f4f6; margin-top:5px;"><span style="color:#065f46;">Banka:</span> <span>Ziraat Bankası</span></div>
+            <div class="bank-row" style="color:#374151; border-bottom:1px solid #f3f4f6; margin-top:5px;"><span style="color:#065f46;">Açıklama:</span> <span id="modalKurbanDescription" style="background:#d1fae5; color:#065f46; padding:2px 6px; border-radius:4px; font-weight:600;">Kurban Bağışı</span></div>
+        </div>
+    </div>
+
+    <footer>
+        <p><b>&copy; 2024 Şevkat Işığı Derneği. Tüm hakları saklıdır.</b></p>
+    </footer>
+
+    <!-- JAVASCRIPT MOTORU -->
+    <script>
+        function openModal(title, iban) {
+            document.getElementById('modalKurbanTitle').innerText = title;
+            document.getElementById('modalIbanText').innerText = iban;
+            document.getElementById('modalKurbanDescription').innerText = title + " Bağışı";
+            document.getElementById('donationModal').classList.add('active');
+        }
+        function closeModal() { document.getElementById('donationModal').classList.remove('active'); }
+        function closeModalOnOverlay(event) { if(event.target.id === 'donationModal') { closeModal(); } }
+
+        function copyIban(textId, btnId) {
+            const ibanText = document.getElementById(textId).innerText;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(ibanText).then(() => showSuccess(btnId)).catch(() => fallbackCopy(ibanText, btnId));
+            } else { fallbackCopy(ibanText, btnId); }
+        }
+        function fallbackCopy(text, btnId) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text; textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus(); textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            showSuccess(btnId);
+        }
+        function showSuccess(btnId) {
+            const btn = document.getElementById(btnId);
+            const originalText = btn.innerText;
+            btn.innerText = "✓ Kopyalandı!";
+            btn.classList.add('btn-copied');
+            setTimeout(() => { btn.innerText = originalText; btn.classList.remove('btn-copied'); }, 2000);
+        }
+
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('active');
+                el.querySelector('.faq-answer').style.maxHeight = '0';
+            });
+            if (!isActive) {
+                item.classList.add('active');
+                const answer = item.querySelector('.faq-answer');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        }
+
+        function startCountdown() {
+            const targetDate = new Date("May 27, 2026 00:00:00").getTime();
+            setInterval(function() {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+                if (difference < 0) { document.getElementById("timer").innerText = "Bayramınız Mübarek Olsun!"; return; }
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById("timer").innerText = days + " Gün " + hours + " Saat " + minutes + " Dk";
+            }, 1000);
+        }
+        startCountdown();
+    </script>
+</body>
+</html>
