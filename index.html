@@ -23,15 +23,14 @@
         .btn-main { background: #059669; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: 0.2s; display: inline-block; text-align: center; }
         .btn-main:hover { background: #047857; }
         
-        /* HAREKETLİ SLIDER ALANI (ASLA ENGELLENMEYEN DIJITAL ÇIZIMLI) */
+        /* HAREKETLİ SLIDER ALANI (GARANTİLİ GERÇEK RESİMLİ) */
         .hero-slider { position: relative; width: 100%; height: 440px; overflow: hidden; background: #022c22; }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 0 40px; max-width: 1200px; margin: 0 auto; right: 0; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; background-repeat: no-repeat; text-align: center; }
         .slide.active { opacity: 1; z-index: 10; }
-        .slide-content { color: white; padding-right: 20px; }
-        .slide-content h2 { font-size: 34px; font-weight: bold; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        .slide-content p { font-size: 17px; color: #a7f3d0; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
-        .slide-graphic { display: flex; justify-content: center; align-items: center; }
-        .slide-graphic svg { width: 80%; max-width: 320px; height: auto; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3)); }
+        .slide-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.55)); z-index: 1; }
+        .slide-content { position: relative; z-index: 10; color: white; max-w: 800px; padding: 0 20px; }
+        .slide-content h2 { font-size: 36px; font-weight: bold; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.6); }
+        .slide-content p { font-size: 18px; color: #a7f3d0; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
 
         /* FİYAT KARTLARI BÖLÜMÜ */
         .price-section { max-w: 1200px; margin: -40px auto 40px; padding: 0 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; position: relative; z-index: 30; }
@@ -88,10 +87,9 @@
 
         /* MOBİL UYUM */
         @media (max-w: 768px) {
-            .slide { grid-template-columns: 1fr; padding: 20px; text-align: center; }
-            .slide-content h2 { font-size: 24px; }
+            .hero-slider { height: 340px; }
+            .slide-content h2 { font-size: 26px; }
             .slide-content p { font-size: 14px; }
-            .slide-graphic { display: none; } /* Mobilde çizimleri gizleyerek alanı temiz tutar */
             .price-section { grid-template-columns: 1fr; margin-top: -30px; gap: 20px; }
             .feature-grid { grid-template-columns: 1fr; }
         }
@@ -116,47 +114,23 @@
         </div>
     </header>
 
-    <!-- HAREKETLİ SLIDER ALANI -->
+    <!-- HAREKETLİ SLIDER ALANI (KESİN ÇALIŞAN GERÇEK RESİMLİ) -->
     <section class="hero-slider">
-        <!-- 1. Slayt: Büyükbaş Yazısı + Kodla Çizilen Büyükbaş SVG Görseli -->
-        <div class="slide active">
+        <!-- 1. Slayt: Büyükbaş Yazısı + Güvenli Büyükbaş Fotoğraf Linki -->
+        <div class="slide active" style="background-image: url('https://fineartamerica.com');">
+            <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2>Büyükbaş Kurban Hissesi Bağışı</h2>
                 <p>Hisselerinizi muhtaç kardeşlerimizin sofralarına ulaştırıyor, bereketi paylaşıyoruz.</p>
             </div>
-            <div class="slide-graphic">
-                <!-- Dijital İnek/Boğa Çizimi -->
-                <svg viewBox="0 0 100 100" xmlns="http://w3.org">
-                    <circle cx="50" cy="50" r="45" fill="#047857" opacity="0.3"/>
-                    <path d="M30,40 Q50,20 70,40 Q75,60 50,75 Q25,60 30,40 Z" fill="#a7f3d0"/>
-                    <circle cx="42" cy="45" r="4" fill="#065f46"/>
-                    <circle cx="58" cy="45" r="4" fill="#065f46"/>
-                    <path d="M45,60 Q50,65 55,60" stroke="#065f46" stroke-width="3" fill="none" stroke-linecap="round"/>
-                    <path d="M28,32 Q20,20 35,26" stroke="#fef08a" stroke-width="4" fill="none" stroke-linecap="round"/>
-                    <path d="M72,32 Q80,20 65,26" stroke="#fef08a" stroke-width="4" fill="none" stroke-linecap="round"/>
-                </svg>
-            </div>
         </div>
         
-        <!-- 2. Slayt: Küçükbaş Yazısı + Kodla Çizilen Küçükbaş SVG Görseli -->
-        <div class="slide">
+        <!-- 2. Slayt: Küçükbaş Yazısı + Güvenli Küçükbaş Fotoğraf Linki -->
+        <div class="slide" style="background-image: url('https://fineartamerica.com');">
+            <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2>Küçükbaş Kurban Vekaleti</h2>
                 <p>İslami usullere tam uygun kesim videolarını anında telefonunuza gönderiyoruz.</p>
-            </div>
-            <div class="slide-graphic">
-                <!-- Dijital Koç/Koyun Çizimi -->
-                <svg viewBox="0 0 100 100" xmlns="http://w3.org">
-                    <circle cx="50" cy="50" r="45" fill="#0e7490" opacity="0.3"/>
-                    <circle cx="50" cy="48" r="22" fill="#ffffff"/>
-                    <circle cx="38" cy="45" r="8" fill="#f3f4f6"/>
-                    <circle cx="62" cy="45" r="8" fill="#f3f4f6"/>
-                    <circle cx="50" cy="55" r="10" fill="#f3f4f6"/>
-                    <circle cx="45" cy="45" r="3" fill="#111827"/>
-                    <circle cx="55" cy="45" r="3" fill="#111827"/>
-                    <path d="M28,35 Q20,45 32,48" stroke="#d1d5db" stroke-width="4" fill="none" stroke-linecap="round"/>
-                    <path d="M72,35 Q80,45 68,48" stroke="#d1d5db" stroke-width="4" fill="none" stroke-linecap="round"/>
-                </svg>
             </div>
         </div>
     </section>
