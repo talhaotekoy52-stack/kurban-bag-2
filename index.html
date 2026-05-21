@@ -23,14 +23,15 @@
         .btn-main { background: #059669; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: 0.2s; display: inline-block; text-align: center; }
         .btn-main:hover { background: #047857; }
         
-        /* HAREKETLİ SLIDER ALANI (GARANTİLİ GERÇEK RESİMLİ) */
+        /* HAREKETLİ SLIDER ALANI (GÖNDERDİĞİN LOGOLARIN ENTEGRE EDİLDİĞİ KISIM) */
         .hero-slider { position: relative; width: 100%; height: 440px; overflow: hidden; background: #022c22; }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; background-repeat: no-repeat; text-align: center; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; padding: 0 50px; max-width: 1200px; margin: 0 auto; right: 0; }
         .slide.active { opacity: 1; z-index: 10; }
-        .slide-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.55)); z-index: 1; }
-        .slide-content { position: relative; z-index: 10; color: white; max-w: 800px; padding: 0 20px; }
-        .slide-content h2 { font-size: 36px; font-weight: bold; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.6); }
-        .slide-content p { font-size: 18px; color: #a7f3d0; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+        .slide-content { color: white; padding-right: 20px; }
+        .slide-content h2 { font-size: 38px; font-weight: bold; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .slide-content p { font-size: 18px; color: #a7f3d0; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
+        .slide-graphic { display: flex; justify-content: center; align-items: center; }
+        .slide-graphic svg { width: 90%; max-width: 290px; height: auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5)); }
 
         /* FİYAT KARTLARI BÖLÜMÜ */
         .price-section { max-w: 1200px; margin: -40px auto 40px; padding: 0 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; position: relative; z-index: 30; }
@@ -87,9 +88,11 @@
 
         /* MOBİL UYUM */
         @media (max-w: 768px) {
+            .slide { grid-template-columns: 1fr; padding: 20px; text-align: center; }
             .hero-slider { height: 340px; }
-            .slide-content h2 { font-size: 26px; }
+            .slide-content h2 { font-size: 24px; }
             .slide-content p { font-size: 14px; }
+            .slide-graphic { display: none; } /* Mobilde ekranı temiz tutmak için logoları gizler */
             .price-section { grid-template-columns: 1fr; margin-top: -30px; gap: 20px; }
             .feature-grid { grid-template-columns: 1fr; }
         }
@@ -114,23 +117,52 @@
         </div>
     </header>
 
-    <!-- HAREKETLİ SLIDER ALANI (KESİN ÇALIŞAN GERÇEK RESİMLİ) -->
+    <!-- SLIDER ALANI (GÖNDERDİĞİN YENİ KURBAN LOGOLARI BURADA DÖNÜYOR) -->
     <section class="hero-slider">
-        <!-- 1. Slayt: Büyükbaş Yazısı + Güvenli Büyükbaş Fotoğraf Linki -->
-        <div class="slide active" style="background-image: url('https://fineartamerica.com');">
-            <div class="slide-overlay"></div>
+        <!-- 1. Slayt: Büyükbaş Yazısı + Gönderdiğin İnek/Boğa Logosunun Birebir Çizimi -->
+        <div class="slide active">
             <div class="slide-content">
                 <h2>Büyükbaş Kurban Hissesi Bağışı</h2>
                 <p>Hisselerinizi muhtaç kardeşlerimizin sofralarına ulaştırıyor, bereketi paylaşıyoruz.</p>
             </div>
+            <div class="slide-graphic">
+                <svg viewBox="0 0 100 100" xmlns="http://w3.org">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="#a7f3d0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <!-- Gönderdiğin İnek Kafası Çizim Vektörü -->
+                    <path d="M50,22 C42,22 37,25 33,29 C28,26 21,24 19,27 C17,30 20,38 25,41 C21,46 17,50 16,56 C14,64 21,68 25,65 C25,72 32,82 50,82 C68,82 75,72 75,65 C79,68 86,64 84,56 C83,50 79,46 75,41 C80,38 83,30 81,27 C79,24 72,26 67,29 C63,25 58,22 50,22 Z" fill="#ffffff"/>
+                    <!-- Boynuzlar -->
+                    <path d="M33,29 C28,15 38,10 38,10 C38,10 24,14 19,27" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M67,29 C72,15 62,10 62,10 C62,10 76,14 81,27" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+                    <!-- Detay Çizgileri (Siyah Konturlar) -->
+                    <path d="M35,33 Q50,26 65,33 M31,42 Q50,34 69,42 M41,50 A 3 3 0 1 0 41,50.1 M59,50 A 3 3 0 1 0 59,50.1" stroke="#022c22" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M40,68 Q50,74 60,68" stroke="#022c22" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <circle cx="44" cy="62" r="2.5" fill="#022c22"/>
+                    <circle cx="56" cy="62" r="2.5" fill="#022c22"/>
+                </svg>
+            </div>
         </div>
         
-        <!-- 2. Slayt: Küçükbaş Yazısı + Güvenli Küçükbaş Fotoğraf Linki -->
-        <div class="slide" style="background-image: url('https://fineartamerica.com');">
-            <div class="slide-overlay"></div>
+        <!-- 2. Slayt: Küçükbaş Yazısı + Gönderdiğin Koyun Logosunun Birebir Çizimi -->
+        <div class="slide">
             <div class="slide-content">
                 <h2>Küçükbaş Kurban Vekaleti</h2>
                 <p>İslami usullere tam uygun kesim videolarını anında telefonunuza gönderiyoruz.</p>
+            </div>
+            <div class="slide-graphic">
+                <svg viewBox="0 0 100 100" xmlns="http://w3.org">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="#a7f3d0" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <!-- Gönderdiğin Koyun Kafası Çizim Vektörü -->
+                    <path d="M50,20 C40,20 32,24 30,32 C23,31 16,33 15,38 C14,43 18,48 24,48 C22,54 22,62 26,68 C32,78 42,80 50,80 C58,80 68,78 74,68 C78,62 78,54 76,48 C82,48 86,43 85,38 C84,33 77,31 70,32 C68,24 60,20 50,20 Z" fill="#ffffff"/>
+                    <!-- Kulaklar -->
+                    <path d="M28,34 C16,34 14,44 24,44" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+                    <path d="M72,34 C84,34 86,44 76,44" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+                    <!-- Yüz ve Sakal Siyah Detayları -->
+                    <path d="M35,46 A 3 3 0 1 1 35,45.9 M65,46 A 3 3 0 1 1 65,45.9" stroke="#022c22" stroke-width="2.5" fill="none"/>
+                    <path d="M42,58 Q50,64 58,58" stroke="#022c22" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M32,60 Q36,75 50,75 Q64,75 68,60" stroke="#022c22" stroke-width="2" fill="none" stroke-dasharray="2 2"/>
+                    <!-- Üst Kıvırcık Yünler -->
+                    <path d="M36,28 Q50,20 64,28" stroke="#022c22" stroke-width="3" fill="none" stroke-linecap="round"/>
+                </svg>
             </div>
         </div>
     </section>
@@ -305,12 +337,4 @@
                 const difference = targetDate - now;
                 if (difference < 0) { document.getElementById("timer").innerText = "Bayramınız Mübarek Olsun!"; return; }
                 const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                document.getElementById("timer").innerText = days + " Gün " + hours + " Saat " + minutes + " Dk";
-            }, 1000);
-        }
-        startCountdown();
-    </script>
-</body>
-</html>
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000
