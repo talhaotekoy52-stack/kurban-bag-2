@@ -188,6 +188,7 @@
         function closeModal() { document.getElementById('donationModal').classList.remove('active'); }
         function closeModalOnOverlay(event) { if(event.target.id === 'donationModal') { closeModal(); } }
 
+        // Akıllı kopyalama fonksiyonu
         function copyIban(textId, btnId) {
             const ibanText = document.getElementById(textId).innerText;
             if (navigator.clipboard && navigator.clipboard.writeText) {
